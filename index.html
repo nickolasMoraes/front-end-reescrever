@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reescrever com IA - Dicionário Caipora</title>
+    <link rel="icon" type="image/png" href="./images/logo_caipora.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        body {
+            background-color: #c4c9cd;
+        }
+        .footer {
+            background-color: #343a40;
+        }
+        .footer p {
+            color: white;
+            font-size: 14px;
+        }
+        .back-button {
+            margin-top: 20px;
+        }
+        .reportagem-container {
+            margin-top: 20px;
+        }
+        .reportagem {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .reportagem h2 {
+            font-size: 22px;
+            color: #4d4d4d;
+            margin-bottom: 10px;
+        }
+        .reportagem p {
+            font-size: 16px;
+            color: #343a40;
+            line-height: 1.6;
+        }
+        .logo {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+        .title {
+            color: #4d4d4d;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 0;
+            white-space: nowrap;
+        }
+        .editor-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .editor {
+            flex: 1;
+            position: relative;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+        .editor-clear-button,
+        .output-copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .output {
+            flex: 1;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        .output-copy-button {
+            top: 10px;
+            right: 10px;
+        }
+        textarea {
+        width: calc(100% - 24px);
+        height: 200px;
+        margin-bottom: 10px;
+        resize: vertical;
+        }
+        button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        }
+        .word-counter {
+        margin-top: 10px;
+        text-align: right;
+        font-size: 14px;
+        color: #666;
+        }
+        #input-box {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Cabeçalho -->
+        <div class="row custom-header mb-4">
+            <div class="col-sm-auto">
+                <a href="index.html" class="btn btn-secondary back-button"><i class="fas fa-arrow-left"></i> Voltar</a>
+            </div>
+            <div class="col-sm-auto align-items-center d-flex">
+                <img src="./images/logo_caipora.png" alt="Logo do site" class="img-fluid logo">
+                <h1 class="title mb-0">DICIO CAIPORA<br>MOTO ACADEMY</h1>
+            </div>
+        </div>
+
+        <div class="row reportagem-container">
+            <div class="col-md-12">
+                
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 editor">
+                                <h2>Entrada</h2>
+                                <textarea id="input-box" placeholder="Digite ou cole o texto aqui"></textarea>
+                                <button id="clear-btn" class="editor-clear-button">
+                                    <img src="https://img.icons8.com/material-sharp/24/000000/trash--v1.png"/>
+                                </button>
+                                <button class="btn btn-primary" id="paraphrase-btn">Reescrever</button>
+                                <div class="word-counter" id="word-counter">0/125</div>
+                            </div>
+                            <div class="col-md-6 output">
+                                <h2>Saída</h2>
+                                <div id="output-box"></div>
+                                <button id="copy-btn" class="output-copy-button">
+                                    <img src="https://img.icons8.com/material-sharp/24/000000/copy--v1.png"/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <div class="reportagem">
+                    <div class="pWrapper">
+                        <h2>Como usar</h2>
+                        <ol>
+                            <li>Insira o texto que pretende reescrever na primeira caixa.</li>
+                            <li>Espere alguns segundos.</li>
+                            <li>Prontinho. O seu texto foi reescrito.</li>
+                        </ol>
+                        <p>Nossa ferramenta vai parafrasear o seu conteúdo. Isto é, vai mudar texto, modificar palavras, reestruturar frases e inserir sinônimos em seus documentos. Com apenas um clique você consegue trocar palavras no seu texto em segundos. Nossa ferramenta é a escolha perfeita para quem busca agilidade e eficiência.</p>
+                        <p>Aqui você encontra um mudador de texto poderoso, capaz de transcrever texto, reformular conteúdo e reescrever textos com facilidade. Seja um redator, estudante ou profissional de marketing, nosso reescritor de texto é ideal para todas as suas necessidades.</p>
+                        <p>Isto é mais do que um reformulador de texto. É um simplificador de vida.</p>
+                    </div>        
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="footer bg-dark py-4">
+            <div class="container text-center text-white">
+                <p class="mb-0">&copy; 2024 MotoAcademy™. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
