@@ -16,7 +16,7 @@ document.getElementById('paraphrase-btn').addEventListener('click', async () => 
     }
 
     try {
-        const response = await fetch('http://localhost:3000/paraphrase', {
+        const response = await fetch('http://localhost:4000/paraphrase', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
